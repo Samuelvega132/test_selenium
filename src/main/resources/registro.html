@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Usuario</title>
+</head>
+<body>
+<h2>Registro de Usuario</h2>
+<label>Nombre: </label><br>
+<input type="text" id="nombre"><br><br>
+<label>Correo: </label><br>
+<input type="email" id="correo"><br><br>
+<label>Edad: </label><br>
+<input type="number" id="edad"><br><br>
+<button id="registrar">Registrar</button>
+<h3 id="mensaje"></h3>
+<script>
+    document.getElementById("registrar").onclick = function() {
+        let nombre = document.getElementById("nombre").value;
+        let correo = document.getElementById("correo").value;
+        let edad = document.getElementById("edad").value;
+        if (nombre=="" || correo=="" || edad=="") {
+            document.getElementById("mensaje").innerHTML = "Debe completar todos los campos";
+            return;
+        }
+        if (edad < 18) {
+            document.getElementById("mensaje").innerHTML = "Usuario menor de edad";
+            return;
+        }
+        document.getElementById("mensaje").innerHTML = "Registro exitoso";
+    }
+</script>
+</body>
+</html>
