@@ -14,7 +14,7 @@ public class RegistroUsuarioSeleniumTest {
 
     private WebDriver driver;
 
-    private final String URL_PAGINA = "file:///C:/Users/PC-LAB-ADM-01/Downloads/test_selenium/src/main/resources/registro.html";
+    private final String URL_PAGINA = "src/main/resources/registro.html";
 
     @BeforeEach
     public void setUp() {
