@@ -10,17 +10,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.nio.file.Paths;
+
 public class RegistroUsuarioSeleniumTest {
 
     private WebDriver driver;
 
-    private final String URL_PAGINA = "src/main/resources/registro.html";
+    String ruta = Paths.get("src/main/resources/registro.html")
+            .toAbsolutePath()
+            .toUri()
+            .toString();
 
     @BeforeEach
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(URL_PAGINA);
+        driver.get(ruta);
     }
 
     @Test
